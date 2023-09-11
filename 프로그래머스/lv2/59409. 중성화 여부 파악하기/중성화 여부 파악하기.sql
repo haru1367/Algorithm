@@ -1,0 +1,16 @@
+SELECT ANIMAL_ID, NAME, 
+replace(SEX_UPON_INTAKE,'Neutered Male','O') AS 중성화
+FROM ANIMAL_INS WHERE SEX_UPON_INTAKE = 'Neutered Male'
+UNION
+SELECT ANIMAL_ID, NAME,
+replace(SEX_UPON_INTAKE,'Spayed Female','O') AS 중성화
+FROM ANIMAL_INS WHERE SEX_UPON_INTAKE = 'Spayed Female'
+UNION
+SELECT ANIMAL_ID, NAME,
+replace(SEX_UPON_INTAKE,'Intact Male','X') AS 중성화
+FROM ANIMAL_INS WHERE SEX_UPON_INTAKE = 'Intact Male'
+UNION
+SELECT ANIMAL_ID, NAME,
+replace(SEX_UPON_INTAKE,'Intact Female','X') AS 중성화
+FROM ANIMAL_INS WHERE SEX_UPON_INTAKE = 'Intact Female'
+order by animal_id;
